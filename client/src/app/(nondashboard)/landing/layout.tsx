@@ -7,11 +7,10 @@ export default function Layout({
     children: React.ReactNode
 }) {
     return <>
-        <div
-            className="h-full w-full">
+        <div className="h-full w-full">
             <Navbar />
             <main
-                className={`h-full flex w-full flex-col`}
+                className="h-full flex w-full flex-col"
                 style={{ paddingTop: `${NAVBAR_HEIGHT}px` }}>
                 {children}
             </main>

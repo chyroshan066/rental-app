@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button";
 export default function HeroSection() {
     return <>
         <div className="relative h-screen">
-            {/* <div className="relative h-screen"> */}
             <Image
                 src="/landing-splash.jpg"
                 alt="Rentiful Rental Platform Hero Section"
@@ -22,7 +21,6 @@ export default function HeroSection() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                     className="absolute transform -translate-y-1/2 top-1/3 text-center w-full"
-                // className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/3 text-center w-full"
                 >
                     <div className="max-w-4xl mx-auto px-16 sm:px-12">
                         <h1 className="text-5xl font-bold text-white mb-4">

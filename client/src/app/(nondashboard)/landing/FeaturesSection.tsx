@@ -124,4 +124,4 @@ const FeatureCard = ({
             </Link>
         </div>
     </>
-)
+);
