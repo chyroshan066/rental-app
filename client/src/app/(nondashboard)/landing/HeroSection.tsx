@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 export default function HeroSection() {
     return <>
         <div className="relative h-screen">
+            {/* <div className="relative h-screen"> */}
             <Image
                 src="/landing-splash.jpg"
                 alt="Rentiful Rental Platform Hero Section"
