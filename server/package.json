@@ -1,13 +1,18 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "type": "module",
+  "imports": {
+    "#*": "./dist/*.js"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
-    "start": "node dist/index.js",
+    "build": "rimraf dist && npx tsc",
+    "start": "npm run build && node dist/index.js",
     "dev": "tsx watch src/index.ts",
+    "seed": "tsx ",
+    "prisma:generate": "prisma generate",
+    "postprisma:generate": "shx cp -r node_modules/.prisma/client/index.d.ts ../client/src/types/prismaTypes.d.ts",
     "type-check": "tsc --noEmit",
     "lint": "eslint . --ext .ts"
   },
@@ -18,17 +23,37 @@
   "devDependencies": {
     "@types/cors": "^2.8.18",
     "@types/express": "^5.0.2",
+    "@types/jsonwebtoken": "^9.0.9",
+    "@types/morgan": "^1.9.9",
+    "@types/multer": "^1.4.12",
     "@types/node": "^22.15.19",
+    "@types/terraformer__wkt": "^2.0.3",
+    "@types/uuid": "^10.0.0",
     "@typescript-eslint/eslint-plugin": "^8.32.1",
     "@typescript-eslint/parser": "^8.32.1",
+    "concurrently": "^9.1.2",
     "eslint": "^9.27.0",
+    "prisma": "^6.9.0",
+    "rimraf": "^6.0.1",
+    "shx": "^0.4.0",
+    "ts-node": "^10.9.2",
     "tsx": "^4.19.4",
     "typescript": "^5.8.3"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.824.0",
+    "@aws-sdk/lib-storage": "^3.824.0",
+    "@prisma/client": "^6.9.0",
+    "@terraformer/wkt": "^2.2.1",
+    "axios": "^1.9.0",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "multer": "^2.0.1",
+    "uuid": "^11.1.0",
     "zod": "^3.25.1"
   }
 }
